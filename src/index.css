@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+:root,
+[data-theme='dark'] {
+  --color-bg: #0d0d0f;
+  --color-surface: #18181c;
+  --color-surface2: #1f1f25;
+  --color-border: #2a2a32;
+  --color-accent: #6c63ff;
+  --color-accent-dim: #4a44b3;
+  --color-text: #e8e8ef;
+  --color-muted: #6b6b78;
+  --color-canvas: #16161a;
+  --color-success: #34d399;
+  --color-danger: #f87171;
+}
+
+[data-theme='light'] {
+  --color-bg: #f0f0f4;
+  --color-surface: #ffffff;
+  --color-surface2: #f7f7fb;
+  --color-border: #dddde8;
+  --color-accent: #5b52e8;
+  --color-accent-dim: #7b74f0;
+  --color-text: #111118;
+  --color-muted: #888896;
+  --color-canvas: #ffffff;
+  --color-success: #059669;
+  --color-danger: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}

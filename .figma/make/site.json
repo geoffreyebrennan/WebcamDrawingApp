@@ -1,0 +1,11 @@
+{
+  "description": "Create stunning drawings using hand tracking and voice commands for customizable features like line thickness and color, perfect for artists and creators.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  },
+  "permissions": ["camera", "microphone"]
+}
