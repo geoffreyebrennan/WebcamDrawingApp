@@ -139,7 +139,7 @@ export default function App() {
               color: 'var(--color-text)',
             }}
           >
-            handraw
+            Handraw
           </span>
           <span
             style={{
