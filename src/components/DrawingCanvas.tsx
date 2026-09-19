@@ -105,7 +105,7 @@ export const DrawingCanvas = forwardRef<DrawingCanvasHandle, Props>(function Dra
 
     if (!indexTip) return
 
-    const rawPt: Point = { x: indexTip.x * W, y: indexTip.y * H }
+    const rawPt: Point = { x: (1 - indexTip.x) * W, y: indexTip.y * H }
     smoothBufferRef.current.push(rawPt)
     if (smoothBufferRef.current.length > SMOOTH_WINDOW) {
       smoothBufferRef.current.shift()
