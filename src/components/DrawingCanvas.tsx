@@ -169,8 +169,10 @@ function drawStroke(ctx: CanvasRenderingContext2D, stroke: Stroke, _w: number, _
   for (let i = 1; i < points.length; i++) {
     ctx.lineTo(points[i].x, points[i].y)
   }
-  ctx.closePath()
-  if (config.fill) ctx.fill()
+  if (config.fill) {
+    ctx.closePath()
+    ctx.fill()
+  }
   ctx.stroke()
   ctx.restore()
 }
