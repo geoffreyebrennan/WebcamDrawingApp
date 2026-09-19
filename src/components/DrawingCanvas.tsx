@@ -96,6 +96,7 @@ export const DrawingCanvas = forwardRef<DrawingCanvasHandle, Props>(function Dra
           points: [...currentStrokeRef.current],
           config: { ...config },
         })
+        redraw()
       }
       currentStrokeRef.current = []
       smoothBufferRef.current = []
@@ -150,6 +151,7 @@ function applyConfig(ctx: CanvasRenderingContext2D, config: StrokeConfig) {
   } else {
     ctx.globalCompositeOperation = 'source-over'
     ctx.strokeStyle = config.color
+    ctx.fillStyle = config.color
     ctx.lineWidth = config.lineWidth
   }
   ctx.lineCap = 'round'
@@ -167,6 +169,8 @@ function drawStroke(ctx: CanvasRenderingContext2D, stroke: Stroke, _w: number, _
   for (let i = 1; i < points.length; i++) {
     ctx.lineTo(points[i].x, points[i].y)
   }
+  ctx.closePath()
+  if (config.fill) ctx.fill()
   ctx.stroke()
   ctx.restore()
 }
